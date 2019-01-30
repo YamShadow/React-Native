@@ -38,6 +38,7 @@ class BarcodeScanner extends React.Component {
     alert(`Bar code with type ${type} and data ${data} has been scanned!`);
     console.log("ISBN: " + data);
     this.props.storeISBN(data);
+    console.log(this.store);
   };
 }
 
