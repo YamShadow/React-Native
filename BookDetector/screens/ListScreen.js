@@ -10,11 +10,11 @@ class ListScreen extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
         console.log("histo");
-        console.log(this.props.books);
+        console.log(this.props.bookReducers.books);
         return (
             <View style={styles.container}>
                 {this.props.book &&
-                    this.props.book.map(item => {
+                    this.props.bookReducers.book.map(item => {
                         return (
                             <Text
                                 onPress={() =>
@@ -58,9 +58,7 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = state => {
     console.log("state :: ", state);
-    return {
-        books: state.bookReducers.books
-    };
+    return state;
 };
 
 const mapDispatchToProps = dispatch => {
