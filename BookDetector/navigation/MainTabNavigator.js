@@ -1,63 +1,63 @@
 import React from "react";
 import { Platform } from "react-native";
 import {
-  createStackNavigator,
-  createBottomTabNavigator
+    createStackNavigator,
+    createBottomTabNavigator
 } from "react-navigation";
 
 import TabBarIcon from "../components/TabBarIcon";
 import BarcodeScanner from "../components/BarcodeScanner";
-import LinksScreen from "../screens/LinksScreen";
-import SettingsScreen from "../screens/SettingsScreen";
+import BookScreen from "../screens/BookScreen";
+import ListScreen from "../screens/ListScreen";
 
 const CameraStack = createStackNavigator({
-  Camera: BarcodeScanner
+    Camera: BarcodeScanner
 });
 
 CameraStack.navigationOptions = {
-  tabBarLabel: "Camera",
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === "ios"
-          ? `ios-information-circle${focused ? "" : "-outline"}`
-          : "md-information-circle"
-      }
-    />
-  )
+    tabBarLabel: "Camera",
+    tabBarIcon: ({ focused }) => (
+        <TabBarIcon
+            focused={focused}
+            name={
+                Platform.OS === "ios"
+                    ? `ios-barcode${focused ? "" : "-outline"}`
+                    : "md-barcode"
+            }
+        />
+    )
 };
 
 const LastBookStack = createStackNavigator({
-  Links: LinksScreen
+    Book: BookScreen
 });
 
 LastBookStack.navigationOptions = {
-  tabBarLabel: "Last Books",
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === "ios" ? "ios-link" : "md-link"}
-    />
-  )
+    tabBarLabel: "Book",
+    tabBarIcon: ({ focused }) => (
+        <TabBarIcon
+            focused={focused}
+            name={Platform.OS === "ios" ? "ios-bookmarks" : "md-bookmarks"}
+        />
+    )
 };
 
 const HistoricStack = createStackNavigator({
-  Settings: SettingsScreen
+    List: ListScreen
 });
 
 HistoricStack.navigationOptions = {
-  tabBarLabel: "Historic",
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === "ios" ? "ios-options" : "md-options"}
-    />
-  )
+    tabBarLabel: "Historic",
+    tabBarIcon: ({ focused }) => (
+        <TabBarIcon
+            focused={focused}
+            name={Platform.OS === "ios" ? "ios-list-box" : "md-list-box"}
+        />
+    )
 };
 
 export default createBottomTabNavigator({
-  LastBookStack,
-  CameraStack,
-  HistoricStack
+    LastBookStack,
+    CameraStack,
+    HistoricStack
 });
