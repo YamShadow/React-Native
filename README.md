@@ -13,3 +13,7 @@ Un détil est à avancer toutefois : l'API Google Books ne référence pas **tou
 Aussi, nous sommes tombés face à un bug, qui concerne le rafraîchissement de nos Components qui servent d'écrans. Ceux-ci ne se rafraîchissent pas, cependant que le store, lui, se rafraîchit. Ceci implique donc que notre vue ne reflète pas correctement le contenu du store.  
   
 Nous avons donc laissé le code en l'état, avec les `console.log`, vous permettant d'observer l'état du store, bien que la vue ne vous le permette pas.
+
+## ISBN Fonctionnel 
+
+[ISBN Harry Potter](https://cdn.discordapp.com/attachments/390055571258343424/543488452138762240/unknown.png)
